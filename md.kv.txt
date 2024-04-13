@@ -1,0 +1,51 @@
+<MalakasDetectorApp>:
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: "20dp"
+        padding: "20dp"
+
+        MDLabel:
+            text: "Welcome to the Malakas Detector App!"
+            halign: "center"
+            font_style: "H5"
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        MDTextField:
+            id: name_input
+            hint_text: "Enter your name"
+            size_hint: None, None
+            size: "300dp", "40dp"
+            font_size: "16sp"
+
+        MDBoxLayout:
+            spacing: "10dp"
+
+            MDRaisedButton:
+                text: "Check"
+                font_size: "20sp"
+                on_release: root.check_name()
+                elevation_normal: 6
+                md_bg_color: app.theme_cls.primary_color
+
+            MDRaisedButton:
+                text: "Restart"
+                font_size: "20sp"
+                on_release: root.restart_app()
+                elevation_normal: 6
+                md_bg_color: app.theme_cls.accent_color
+
+            MDRaisedButton:
+                text: "Close App"
+                font_size: "20sp"
+                on_release: root.close_app()
+                elevation_normal: 6
+                md_bg_color: app.theme_cls.error_color
+
+        MDLabel:
+            id: output_label
+            text: ""
+            halign: "center"
+            font_size: "20sp"
+            size_hint_y: None
+            height: self.texture_size[1]
